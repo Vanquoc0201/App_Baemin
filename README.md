@@ -66,6 +66,7 @@ cd App_Baemin
 
 ### 2. Run Source BE
 start image docker
+config db_baemin to db_baemin-export because it has data
 cd BE_Baemin_app
 npm install
 npm run start:dev
