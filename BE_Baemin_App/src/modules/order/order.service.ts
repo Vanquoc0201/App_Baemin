@@ -165,17 +165,32 @@ export class OrderService {
         const deliveries = await this.prismaService.deliveries.findMany({
             where: filter,
             include: {
-                Orders: true, 
+            Orders: {
+                include : {
+                    Users: true,
+                }
+            }
             },
             orderBy: {
-                updatedAt: 'desc',
+            updatedAt: 'desc',
             },
         });
+        const formatted = deliveries.map((delivery) => ({
+            deliveryId: delivery.deliveryId,
+            orderId: delivery.Orders?.orderId ?? null,
+            totalPrice: delivery.Orders?.totalPrice ?? 0,
+            status: delivery.Orders?.status ?? delivery.status,
+            customerName: delivery.Orders?.Users?.name ?? "Ẩn danh",
+            shipperName: delivery.shipperName,
+            shipTime: delivery.shipTime,
+            createdAt: delivery.createdAt,
+        }));
 
         return {
             message: 'Danh sách đơn giao hàng',
-            count: deliveries.length,
-            data: deliveries,
+            count: formatted.length,
+            data: formatted,
         };
     }
+
 }

@@ -10,7 +10,7 @@ export class ProductService {
         const allProduct = await this.prismaService.foods.findMany({});
         return {
             message : 'Lấy danh sách món ăn thành công',
-            ...allProduct,
+            data : allProduct,
         }
     }
     async getAllProductPagination(paginationDto: PaginationDto) {

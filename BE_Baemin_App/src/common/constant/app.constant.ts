@@ -15,3 +15,7 @@ export const API_SECRET_CLOUDINARY = process.env.API_SECRET_CLOUDINARY
 
 export const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
 export const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
+
+export const PAYOS_CLIENT_ID = process.env.PAYOS_CLIENT_ID
+export const PAYOS_API_KEY = process.env.PAYOS_API_KEY
+export const PAYOS_CHECKSUM_KEY = process.env.PAYOS_CHECKSUM_KEY

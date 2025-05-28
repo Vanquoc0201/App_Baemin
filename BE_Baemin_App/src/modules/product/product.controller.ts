@@ -11,7 +11,7 @@ export class ProductController {
     constructor(private readonly productService : ProductService){}
     @Get('LayDanhSachSanPham')
     @ApiBearerAuth('AccessToken')
-    async getAllUser(){
+    async getAllProduct(){
         return await this.productService.getAllProduct();
     }
 
@@ -59,9 +59,9 @@ export class ProductController {
         example: 'ga ran',
     })
     async searchProduct (
-        @Query('taiKhoan') taiKhoan:string
+        @Query('foodName') foodName:string
     ){
-        return this.productService.searchProduct(taiKhoan)
+        return this.productService.searchProduct(foodName)
     }
 
 
