@@ -61,7 +61,7 @@ Một website đặt đồ ăn nhanh được lấy cảm hứng từ Baemin, t�
 ## ⚙️ Getting Started
 
 ### 1. Clone repo
-git clone https://github.com/your-username/App_Baemin.git
+git clone https://github.com/Vanquoc0201/App_Baemin.git
 cd App_Baemin
 
 ### 2. Run Source BE
